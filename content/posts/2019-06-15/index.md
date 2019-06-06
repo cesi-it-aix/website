@@ -3,7 +3,7 @@ path: '/lan'
 cover: 'csgo3.jpg'
 date: '2019-06-15'
 title: 'LAN CS:GO'
-tags: []
+tags: ["lan"]
 ---
 
 Nous organison une LAN CS:GO **gratuite** le samedi **15 Juin**, de **10h a 17h**.
