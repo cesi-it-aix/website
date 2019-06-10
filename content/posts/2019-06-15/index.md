@@ -28,6 +28,7 @@ Si votre team est incomplète ou que vous êtes seul [inscrivez-vous ici](https:
 
 Tout au long de la journée, une buvette sera à disposition avec des snacks et des boissons, ainsi que notre spécialité de croque-monsier 
 maison.
+<img src="" width="50" height="50">
 
 ##Accès
 
