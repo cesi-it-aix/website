@@ -10,28 +10,24 @@ Nous organison une LAN CS:GO **gratuite** le samedi **15 Juin**, de **10h a 17h*
 
 ##Materiel
 
-Les **ordinateurs ne sont pas fournis** donc venez avec vos pc portables, il y aura un accès wifi mais il est fortement consseillé d'aporter un cable ethernet asssez long et évidament un casque ou écouteurs.
+Les **ordinateurs ne sont pas fournis** donc venez avec vos pc portables, il y aura un accès wifi mais il est fortement conseillé d'aporter un cable ethernet asssez long et évidemment un casque ou des écouteurs.
 
 ##Inscription
 
-Pour vous inscrire nous avons besoin de votre **nom** et **prenom** ansi que votre **email**.
+Pour vous inscrire nous avons besoin de votre **nom** et **prenom** ainsi que votre **email**.
 
-Si votre team est complete vous pouvez directement vous inscrire sur toornament ci-dessous.
+Si votre team est complète vous pouvez directement vous inscrire sur toornament ci-dessous.
 
 <div>
     <iframe width="300" height="88" src="https://widget.toornament.com/tournaments/2570641501727367168/registration?_locale=fr_FR&theme=discipline" frameborder="0" allowfullscreen></iframe>
 </div>
 
-Si votre team est incomplete ou que vous êtes seul [inscrivez-vous ici](https://forms.gle/rNCniPbSmFeXmpZF9).
+Si votre team est incomplète ou que vous êtes seul [inscrivez-vous ici](https://forms.gle/rNCniPbSmFeXmpZF9).
 
 ##Buvette
 
-Un petit déjeuner sera disponible à partir de **9h30** et la buvette sera ouverte avec :
-
-| A vendre  | Prix |
-| --------- | ---: |
-| Cannette  |      |
-| Sandwitch |      |
+Tout au long de la journée, une buvette sera à disposition avec des snacks et des boissons, ainsi que notre spécialité de croque-monsier 
+maison.
 
 ##Accès
 
@@ -40,5 +36,7 @@ Un petit déjeuner sera disponible à partir de **9h30** et la buvette sera ouve
 </div>
 
 Il y a un **parking** pour ceux qui viennent en voiture.
+
+L'accueil des participants sera à partir de **9h30** avec un petit-déjeuner et du café pour bien démarer la journée.
 
 Nous vous attendons nombreux et motivés pour ce tournoi !
