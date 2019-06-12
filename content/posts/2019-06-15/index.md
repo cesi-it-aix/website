@@ -44,11 +44,14 @@ maison.
 
 2 produits achetés = le 2ème a 50% !
 
-
 \* Non compris dans la formule.
 <!---
   <img src="" width="50" height="50">
 -->
+
+##Cash prize
+
+Pour cet événement, ***150€*** de skins CS-GO sont à gagner pour les meilleurs d'entre vous !
 
 ##Accès
 
