@@ -43,6 +43,7 @@ maison.
 | Café 414 ml* | 1.5€ |
 
 2 produits achetés = le 2ème a 50% !
+
 \* Non compris dans la formule
 <!---
   <img src="" width="50" height="50">
