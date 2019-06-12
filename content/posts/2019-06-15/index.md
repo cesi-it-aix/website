@@ -28,6 +28,22 @@ Si votre team est incomplète ou que vous êtes seul [inscrivez-vous ici](https:
 
 Tout au long de la journée, une buvette sera à disposition avec des snacks et des boissons, ainsi que notre spécialité de croque-monsier 
 maison.
+
+
+| Boisson | Prix | Snacks | Prix |
+| ------ | ------ | ------ | ------ |
+| Ice Tea | 1€ | M&M'S | 1€ |
+| Coca-Cola | 1€ | Kinder Bueno | 1€ |
+| Schweppes| 1€ | Lion | 1€ |
+| Oasis Multi | 1€ | Kit Kat | 1€ |
+| Oasis Orange | 1€ | Bounty | 1€ |
+| Seven Up | 1€ | Madeleine x2 | 1€ |
+| Café 40 ml* | 0.5€ | Sucettes x3 | 1€ |
+| Café 230 ml* | 1€ | Chips | 1€ |
+| Café 414 ml* | 1.5€ |
+
+2 produits achetés = le 2ème a 50% !
+\* Non compris dans la formule
 <!---
   <img src="" width="50" height="50">
 -->
