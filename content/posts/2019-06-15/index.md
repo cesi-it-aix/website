@@ -6,7 +6,7 @@ title: 'LAN CS:GO'
 tags: ['lan']
 ---
 
-Nous organison une LAN CS:GO **gratuite** le samedi **15 Juin**, de **9h30 a 17h**.
+Nous organison une LAN CS:GO **gratuite** le samedi **29 Juin**, de **9h30 a 17h**.
 
 ##Materiel
 
