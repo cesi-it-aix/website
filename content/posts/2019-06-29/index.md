@@ -1,7 +1,7 @@
 ---
 path: '/lan'
 cover: 'csgo3.jpg'
-date: '2019-06-15'
+date: '2019-06-29'
 title: 'LAN CS:GO'
 tags: ['lan']
 ---
