@@ -1,5 +1,5 @@
 ---
-path: '/lan'
+path: '/cafet'
 cover: 'vente.jpg'
 date: '2019-09-26'
 title: 'Buvette'
