@@ -1,9 +1,9 @@
 ---
 path: '/lan'
-cover: 'csgo3.jpg'
-date: '2019-06-29'
-title: 'LAN CS:GO'
-tags: ['lan']
+cover: 'vente.jpg'
+date: '2019-09-26'
+title: 'Buvette'
+tags: ['Cafet']
 ---
 
 Nous organison une LAN CS:GO **gratuite** le samedi **29 Juin**, de **9h30 a 17h**.
