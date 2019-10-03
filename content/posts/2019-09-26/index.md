@@ -9,11 +9,16 @@ tags: ['Cafet']
 
 ##Heure
 
+✔ : Ouvert
+
+✖ : Fermé
+
+
 | Heure\Date 	| Lundi 	| Mardi 	| Mercredi 	| Jeudi 	| Vendredi 	|
 |:-----------:	|:------:	|:------:	|:--------:	|:------:	|:--------:	|
-| 10h30-11h 	| Ouvert 	| Ouvert 	| Ouvert 	| Ouvert 	| Ouvert 	|
-| 12h30-13h30 	| Ouvert 	| Ouvert 	| Ouvert 	| Ouvert 	| Ouvert 	|
-| 15h30-16h 	| Ouvert 	| Ouvert 	| Ouvert 	| Fermé 	| Fermé 	|
+| 10h30-11h 	| ✔ 	| ✔ 	| ✔ 	| ✔ 	|✔|
+| 12h30-13h30 	| ✔ 	| ✔ 	| ✔ 	| ✔ 	|✔|
+| 15h30-16h 	| ✔ 	| ✔ 	| ✔ 	| ✖ 	|  ✖	|
 
 
 
