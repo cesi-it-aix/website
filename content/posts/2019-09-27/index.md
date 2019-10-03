@@ -1,8 +1,8 @@
 ---
 path: '/WEI'
-cover: 'affiche.jpg'
+cover: 'vente.jpg'
 date: '2019-09-27'
-title: 'Week End d'Integration'
+title: 'WEI'
 tags: ['WEI']
 ---
 
