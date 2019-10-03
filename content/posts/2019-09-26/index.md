@@ -7,10 +7,6 @@ tags: ['Cafet']
 ---
 
 
-
-
-
-
 ##Heure
 
 | Heure\Date 	| Lundi 	| Mardi 	| Mercredi 	| Jeudi 	| Vendredi 	|
