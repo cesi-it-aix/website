@@ -11,7 +11,7 @@ tags: ['BEA']
 
 <a href="mailto:bde-aix@viacesi.fr"> Contactez le Bureau des élèves </a>
 
-<a href="https://discord.gg/wHcspBT"> Discord </a>
+<a href="https://discord.gg/wHcspBT">Rejoignez-nous ![Discord](/discord.png) </a>
 
 ##Les Membres
 
