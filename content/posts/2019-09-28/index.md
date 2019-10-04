@@ -11,7 +11,7 @@ tags: ['BEA']
 
 <a href="mailto:bde-aix@viacesi.fr"> Contactez le Bureau des élèves </a>
 
-<a href="https://discord.gg/wHcspBT">Rejoignez-nous ![Discord](/discord.png) </a>
+<a href="https://discord.gg/wHcspBT" target="_blank">Rejoignez-nous <img src="/discord.png" alt="Discord" style="width: 200px;" /></a>
 
 ##Les Membres
 
@@ -38,3 +38,8 @@ Luc Van De Velde
 ###Chargé de communication :
 
 Jailys Porcu
+
+
+#Les Clubs
+
+
