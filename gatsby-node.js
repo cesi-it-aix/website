@@ -10,9 +10,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           query {
-            allMarkdownRemark(
-              sort: { order: ASC, fields: [frontmatter___date] }
-            ) {
+            allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
               edges {
                 node {
                   frontmatter {
@@ -30,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
           return reject(result.errors);
         }
 
-        const [posts, hiddenPosts] = result.data.allMarkdownRemark.edges.reduce(
+        const [posts, hiddenPosts] = result.data.allMdx.edges.reduce(
           (a, e) => {
             if (e.node.frontmatter.hidden === true) {
               a[1].push(e);

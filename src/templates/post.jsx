@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { Layout, Container, Content } from 'layouts';
 import { Header, SEO } from 'components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import '../styles/prism';
 
 const SuggestionBar = styled.div`
@@ -21,12 +22,11 @@ const PostSuggestion = styled.div`
 
 const Post = ({ data, pageContext }) => {
   const { next, prev } = pageContext;
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const image =
     post.frontmatter.cover && post.frontmatter.cover.childImageSharp.fluid;
   const title = post.frontmatter.title;
   const date = post.frontmatter.date;
-  const html = post.html;
   return (
     <Layout>
       <SEO
@@ -38,7 +38,9 @@ const Post = ({ data, pageContext }) => {
       />
       <Header title={title} date={date} cover={image} />
       <Container>
-        <Content input={html} />
+        <Content>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </Content>
       </Container>
       {(prev !== null || next !== null) && (
         <SuggestionBar>
@@ -76,8 +78,9 @@ Post.propTypes = {
 
 export const query = graphql`
   query($pathSlug: String!) {
-    markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
-      html
+    mdx(frontmatter: { path: { eq: $pathSlug } }) {
+      body
+      rawBody
       frontmatter {
         date
         title

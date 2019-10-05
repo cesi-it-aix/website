@@ -17,7 +17,7 @@ const Wrapper = styled.div`
       margin: 0.5rem 0;
     }
   }
-  a:not(.gatsby-resp-image-link):not(.anchor) {
+  a:not(.gatsby-resp-image-link):not(.anchor):not(.button) {
     color: black;
     box-shadow: inset 0 -2px 0 ${props => props.theme.colors.primary.base};
     border-bottom: 1px solid ${props => props.theme.colors.primary.base};
@@ -41,7 +41,6 @@ const Wrapper = styled.div`
   h4,
   h5,
   h6 {
-    display: inline-block;
     position: relative;
     a {
       box-shadow: none;
@@ -59,9 +58,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Content = ({ input }) => (
-  <Wrapper dangerouslySetInnerHTML={{ __html: input }} />
-);
+const Content = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Content;
 
