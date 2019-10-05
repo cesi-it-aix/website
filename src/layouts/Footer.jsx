@@ -75,7 +75,7 @@ const Footer = () => (
           Secrétaire: <span>Luc Van De Velde</span>
         </p>
         <p>
-          Chargé de communication: <span>Jailys Porcu</span>
+          Chargée de communication: <span>Jailys Porcu</span>
         </p>
       </Column>
       <Column>
