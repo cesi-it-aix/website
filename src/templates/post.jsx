@@ -22,7 +22,8 @@ const PostSuggestion = styled.div`
 const Post = ({ data, pageContext }) => {
   const { next, prev } = pageContext;
   const post = data.markdownRemark;
-  const image = post.frontmatter.cover.childImageSharp.fluid;
+  const image =
+    post.frontmatter.cover && post.frontmatter.cover.childImageSharp.fluid;
   const title = post.frontmatter.title;
   const date = post.frontmatter.date;
   const html = post.html;
