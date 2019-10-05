@@ -83,23 +83,23 @@ const Footer = () => (
         <a href="mailto:bde-aix@viacesi.fr">
           <FaEnvelope /> bde-aix@viacesi.fr
         </a>
-        <a href="https://discord.gg/wHcspBT">
+        <a href="https://discord.gg/wHcspBT"  target="_blank">
           <FaDiscord /> Discord
         </a>
-        <a href="https://www.facebook.com/bdecesiaix">
+        <a href="https://www.facebook.com/bdecesiaix"  target="_blank">
           <FaFacebook /> Facebook
         </a>
-        <a href="https://github.com/cesi-it-aix/website">
+        <a href="https://github.com/cesi-it-aix/website"  target="_blank">
           <FaGithub /> Github
         </a>
       </Column>
     </Row>
     <Text>
       Basé sur le{' '}
-      <a href="https://github.com/justinformentin/gatsby-v2-tutorial-starter">
+      <a href="https://github.com/justinformentin/gatsby-v2-tutorial-starter"  target="_blank">
         Gatsby Tutorial Starter
       </a>{' '}
-      de <a href="https://justinformentin.com">Justin Formentin</a>
+      de <a href="https://justinformentin.com"  target="_blank">Justin Formentin</a>
     </Text>
   </Wrapper>
 );
