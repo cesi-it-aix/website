@@ -5,8 +5,6 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve('src/templates/post.jsx');
-    const tagPage = path.resolve('src/pages/tags.jsx');
-    const tagPosts = path.resolve('src/templates/tag.jsx');
 
     resolve(
       graphql(
@@ -20,7 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     path
                     title
-                    tags
+                    hidden
                   }
                 }
               }
@@ -32,45 +30,17 @@ exports.createPages = ({ graphql, actions }) => {
           return reject(result.errors);
         }
 
-        const posts = result.data.allMarkdownRemark.edges;
-
-        const postsByTag = {};
-        // create tags page
-        posts.forEach(({ node }) => {
-          if (node.frontmatter.tags) {
-            node.frontmatter.tags.forEach(tag => {
-              if (!postsByTag[tag]) {
-                postsByTag[tag] = [];
-              }
-
-              postsByTag[tag].push(node);
-            });
-          }
-        });
-
-        const tags = Object.keys(postsByTag);
-
-        createPage({
-          path: '/tags',
-          component: tagPage,
-          context: {
-            tags: tags.sort(),
+        const [posts, hiddenPosts] = result.data.allMarkdownRemark.edges.reduce(
+          (a, e) => {
+            if (e.node.frontmatter.hidden === true) {
+              a[1].push(e);
+            } else {
+              a[0].push(e);
+            }
+            return a;
           },
-        });
-
-        //create tags
-        tags.forEach(tagName => {
-          const posts = postsByTag[tagName];
-
-          createPage({
-            path: `/tags/${tagName}`,
-            component: tagPosts,
-            context: {
-              posts,
-              tagName,
-            },
-          });
-        });
+          [[], []]
+        );
 
         //create posts
         posts.forEach(({ node }, index) => {
@@ -85,6 +55,19 @@ exports.createPages = ({ graphql, actions }) => {
               pathSlug: path,
               prev,
               next,
+            },
+          });
+        });
+
+        hiddenPosts.forEach(({ node }) => {
+          const path = node.frontmatter.path;
+          createPage({
+            path,
+            component: postTemplate,
+            context: {
+              pathSlug: path,
+              prev: null,
+              next: null,
             },
           });
         });

@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { Header, PostList } from 'components';
 import { Layout } from 'layouts';
+import { SEO } from 'components';
 
 const PostWrapper = styled.div`
   display: flex;
@@ -24,8 +24,8 @@ const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'BDE CESI AIX: Événements'} />
-      <Header title="BDE CESI AIX">Événements</Header>
+      <SEO title="Événements" description=" " pathname="/" />
+      <Header title="Événements" />
       <PostWrapper>
         {edges.map(({ node }) => (
           <PostList
@@ -56,7 +56,6 @@ Index.propTypes = {
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
               date: PropTypes.string.isRequired,
-              tags: PropTypes.array,
             }),
           }),
         }).isRequired
@@ -70,6 +69,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: 6
       sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { hidden: { ne: true } } }
     ) {
       edges {
         node {
@@ -78,7 +78,6 @@ export const query = graphql`
           frontmatter {
             title
             path
-            tags
             date(formatString: "MM.DD.YYYY")
             cover {
               childImageSharp {

@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { Layout, Container, Content } from 'layouts';
-import { TagsBlock, Header, SEO } from 'components';
+import { Header, SEO } from 'components';
 import '../styles/prism';
 
 const SuggestionBar = styled.div`
@@ -38,26 +38,27 @@ const Post = ({ data, pageContext }) => {
       <Header title={title} date={date} cover={image} />
       <Container>
         <Content input={html} />
-        {/* <TagsBlock list={post.frontmatter.tags || []} /> */}
       </Container>
-      <SuggestionBar>
-        <PostSuggestion>
-          {prev && (
-            <Link to={prev.frontmatter.path}>
-              Previous
-              <h3>{prev.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-        <PostSuggestion>
-          {next && (
-            <Link to={next.frontmatter.path}>
-              Next
-              <h3>{next.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-      </SuggestionBar>
+      {(prev !== null || next !== null) && (
+        <SuggestionBar>
+          <PostSuggestion>
+            {prev && (
+              <Link to={prev.frontmatter.path}>
+                Previous
+                <h3>{prev.frontmatter.title}</h3>
+              </Link>
+            )}
+          </PostSuggestion>
+          <PostSuggestion>
+            {next && (
+              <Link to={next.frontmatter.path}>
+                Next
+                <h3>{next.frontmatter.title}</h3>
+              </Link>
+            )}
+          </PostSuggestion>
+        </SuggestionBar>
+      )}
     </Layout>
   );
 };
@@ -79,7 +80,6 @@ export const query = graphql`
       frontmatter {
         date
         title
-        tags
         cover {
           childImageSharp {
             fluid(

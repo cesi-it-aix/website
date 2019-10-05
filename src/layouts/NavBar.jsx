@@ -8,6 +8,12 @@ const StyledLink = styled(Link)`
   display: flex;
   font-weight: 700;
   align-items: center;
+  color: ${props => props.theme.colors.white.base};
+  margin-left: 2rem;
+  transition: all ${props => props.theme.transitions.default.duration};
+  &:hover {
+    color: ${props => props.theme.colors.white.grey};
+  }
 `;
 
 const Nav = styled.nav`
@@ -30,12 +36,12 @@ const Nav = styled.nav`
 const NavBar = () => (
   <Headroom calcHeightOnResize disableInlineStyles>
     <StyledLink to="/">
-      <img src={logo} alt="Gatsby Logo" height={100} />
+      <img src={logo} alt="Gatsby Logo" height={100} /> BDE CESI AIX
     </StyledLink>
     <Nav>
-      {/* <Link to="/">Accueil</Link> */}
-      {/* <Link to="/blog">Blog</Link>
-      <Link to="/about">About</Link> */}
+      <Link to="/">Événements</Link>
+      <Link to="/cafet">Buvette</Link>
+      <Link to="/bea">Le BEA</Link>
     </Nav>
   </Headroom>
 );

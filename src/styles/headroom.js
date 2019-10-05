@@ -13,7 +13,7 @@ const headroom = css`
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     svg {
       height: 2.5rem;
       g {
@@ -40,16 +40,15 @@ const headroom = css`
     transition: ${theme.transitions.headroom.transition};
     background-color: ${theme.colors.white.light};
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-    nav {
-      a {
+    a,
+    nav a {
+      color: ${theme.colors.black.base};
+      &:hover {
+        border-color: ${theme.colors.black.base};
         color: ${theme.colors.black.base};
-        &:hover {
-          border-color: ${theme.colors.black.base};
-          color: ${theme.colors.black.base};
-        }
-        &:focus {
-          color: ${theme.colors.black.base};
-        }
+      }
+      &:focus {
+        color: ${theme.colors.black.base};
       }
     }
     padding-top: 0.75rem;

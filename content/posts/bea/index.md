@@ -1,11 +1,9 @@
 ---
-path: '/BEA'
+path: '/bea'
 cover: 'affiche.jpg'
-date: '2019-09-28'
 title: 'BEA'
-tags: ['BEA']
+hidden: true
 ---
-
 
 #Le Bureau
 
@@ -14,8 +12,6 @@ tags: ['BEA']
 <a href="https://discord.gg/wHcspBT" target="_blank" sizes="(max-width: 250px)">Rejoignez-nous <img src="/discord.png" alt="Discord" style="width: 200px;" /></a>
 
 ##Les Membres
-
-
 
 ###Président et Co-Président :
 
@@ -41,7 +37,4 @@ Luc Van De Velde
 
 Jailys Porcu
 
-
 #Les Clubs
-
-
