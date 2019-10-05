@@ -79,7 +79,7 @@ const SEO = ({ title, desc, banner, pathname, article }) => (
       }
       return (
         <>
-          <Helmet title={'BDE CESI AIX: ' + seo.title}>
+          <Helmet title={'BEA CESI AIX: ' + seo.title}>
             <html lang={siteLanguage} />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />

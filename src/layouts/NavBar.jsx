@@ -36,7 +36,7 @@ const Nav = styled.nav`
 const NavBar = () => (
   <Headroom calcHeightOnResize disableInlineStyles>
     <StyledLink to="/">
-      <img src={logo} alt="Gatsby Logo" height={100} /> BDE CESI AIX
+      <img src={logo} alt="Gatsby Logo" height={100} /> Bureau des Etudiants de l'Arbois
     </StyledLink>
     <Nav>
       <Link to="/">Événements</Link>
