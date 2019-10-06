@@ -19,3 +19,5 @@ collections:
       - { label: 'Cover', name: 'cover', widget: 'string' }
       - { label: 'Path', name: 'path', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+    extension: mdx
+    format: frontmatter
