@@ -1,8 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: cesi-it-aix/website
   branch: master
 
-media_folder: static/img
+media_folder: static/uploads
 public_folder: /img
 
 collections:
@@ -15,8 +16,8 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Cover', name: 'cover', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'date' }
+      - { label: 'Cover', name: 'cover', widget: 'image' }
       - { label: 'Path', name: 'path', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     extension: mdx
