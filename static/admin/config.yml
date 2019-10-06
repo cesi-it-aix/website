@@ -7,9 +7,9 @@ media_folder: static/uploads
 public_folder: /uploads
 
 collections:
-  - name: 'post'
-    label: 'Posts'
-    folder: 'content/posts'
+  - name: 'events'
+    label: 'Events'
+    folder: 'content/events'
     create: true
     slug: '{{slug}}'
     editor:
@@ -22,7 +22,20 @@ collections:
         name: 'date'
         widget: 'date'
         format: 'YYYY-MM-DD'
-        required: false
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+    extension: mdx
+    format: frontmatter
+  - name: 'pages'
+    label: 'Pages'
+    folder: 'content/pages'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Path', name: 'path', widget: 'string' }
+      - { label: 'Cover', name: 'cover', widget: 'image', required: false }
       - { label: 'Hidden', name: 'hidden', widget: 'boolean', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     extension: mdx

@@ -27,10 +27,10 @@ exports.createPages = ({ graphql, actions }) => {
             allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
               edges {
                 node {
+                  fileAbsolutePath
                   frontmatter {
                     path
                     title
-                    hidden
                   }
                 }
               }
@@ -42,24 +42,21 @@ exports.createPages = ({ graphql, actions }) => {
           return reject(result.errors);
         }
 
-        const [posts, hiddenPosts] = result.data.allMdx.edges.reduce(
+        const [events, pages] = result.data.allMdx.edges.reduce(
           (a, e) => {
-            if (e.node.frontmatter.hidden === true) {
-              a[1].push(e);
-            } else {
-              a[0].push(e);
-            }
+            const path = e.node.fileAbsolutePath;
+            if (path.match('/events/')) a[0].push(e);
+            if (path.match('/pages/')) a[1].push(e);
             return a;
           },
           [[], []]
         );
 
-        //create posts
-        posts.forEach(({ node }, index) => {
+        events.forEach(({ node }, index) => {
           const path = node.frontmatter.path;
-          const prev = index === 0 ? null : posts[index - 1].node;
+          const prev = index === 0 ? null : events[index - 1].node;
           const next =
-            index === posts.length - 1 ? null : posts[index + 1].node;
+            index === events.length - 1 ? null : events[index + 1].node;
           createPage({
             path,
             component: postTemplate,
@@ -71,7 +68,7 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        hiddenPosts.forEach(({ node }) => {
+        pages.forEach(({ node }) => {
           const path = node.frontmatter.path;
           createPage({
             path,

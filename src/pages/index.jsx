@@ -69,7 +69,7 @@ export const query = graphql`
     allMdx(
       limit: 6
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { hidden: { ne: true } } }
+      filter: { fileAbsolutePath: { regex: "/events/" } }
     ) {
       edges {
         node {
