@@ -6,6 +6,8 @@ backend:
 media_folder: static/uploads
 public_folder: /uploads
 
+site_url: https://bde-cesi-aix.fr
+
 collections:
   - name: 'events'
     label: 'Events'
@@ -36,7 +38,6 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Path', name: 'path', widget: 'string' }
       - { label: 'Cover', name: 'cover', widget: 'image', required: false }
-      - { label: 'Hidden', name: 'hidden', widget: 'boolean', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     extension: mdx
     format: frontmatter
