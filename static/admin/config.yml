@@ -18,7 +18,11 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Path', name: 'path', widget: 'string' }
       - { label: 'Cover', name: 'cover', widget: 'image', required: false }
-      - { label: 'Date', name: 'date', widget: 'date', required: false }
+      - label: 'Date'
+        name: 'date'
+        widget: 'date'
+        format: 'YYYY-MM-DD'
+        required: false
       - { label: 'Hidden', name: 'hidden', widget: 'boolean', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     extension: mdx
