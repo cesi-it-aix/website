@@ -16,9 +16,10 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'date' }
-      - { label: 'Cover', name: 'cover', widget: 'image' }
       - { label: 'Path', name: 'path', widget: 'string' }
+      - { label: 'Cover', name: 'cover', widget: 'image', required: false }
+      - { label: 'Date', name: 'date', widget: 'date', required: false }
+      - { label: 'Hidden', name: 'hidden', widget: 'boolean', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     extension: mdx
     format: frontmatter
