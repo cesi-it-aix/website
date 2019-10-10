@@ -100,7 +100,10 @@ const Footer = () => (
         Gatsby Tutorial Starter
       </a>{' '}
       de <a href="https://justinformentin.com"  target="_blank">Justin Formentin</a>
+      <n></n> <Link to="/statut">Nos Statuts</Link>
+
     </Text>
+
   </Wrapper>
 );
 export default Footer;
