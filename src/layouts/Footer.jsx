@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { FaDiscord, FaEnvelope, FaFacebook, FaGithub } from 'react-icons/fa';
 
@@ -95,13 +96,7 @@ const Footer = () => (
       </Column>
     </Row>
     <Text>
-      Basé sur le{' '}
-      <a href="https://github.com/justinformentin/gatsby-v2-tutorial-starter"  target="_blank">
-        Gatsby Tutorial Starter
-      </a>{' '}
-      de <a href="https://justinformentin.com"  target="_blank">Justin Formentin</a>
-      <n></n> <Link to="/statut">Nos Statuts</Link>
-
+    <Link to="/statut">Nos Statuts</Link>
     </Text>
 
   </Wrapper>
