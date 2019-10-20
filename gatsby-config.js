@@ -28,6 +28,13 @@ module.exports = {
         path: `${__dirname}/content/events`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'gallery',
+        path: `${__dirname}/static/Gallery`,
+      },
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-emotion',
