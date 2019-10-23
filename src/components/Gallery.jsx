@@ -7,7 +7,7 @@ import { photos } from '../Image/photos';
 
 const GET_PICTURES = graphql`
   {
-    allFile(filter: { absolutePath: { regex: "/Gallery/" } }) {
+    allFile(filter: { absolutePath: { regex: "/gallery/" } }) {
       edges {
         node {
           absolutePath
