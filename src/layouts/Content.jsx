@@ -61,7 +61,3 @@ const Wrapper = styled.div`
 const Content = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Content;
-
-Content.propTypes = {
-  input: PropTypes.any.isRequired,
-};
