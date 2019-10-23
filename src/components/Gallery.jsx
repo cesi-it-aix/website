@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { graphql, useStaticQuery } from 'gatsby';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import { photos } from '../Image/photos';
 
 const GET_PICTURES = graphql`
   {
