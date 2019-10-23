@@ -26,7 +26,7 @@ const GET_PICTURES = graphql`
 const ImageGall = ({ folder }) => {
   const data = useStaticQuery(GET_PICTURES);
   const pictures = data.allFile.edges
-    .filter(x => x.node.absolutePath.includes(`Gallery/${folder}`))
+    .filter(x => x.node.absolutePath.includes(`gallery/${folder}`))
     .map(x => x.node.childImageSharp.original);
 
   return <Gallery photos={pictures} />;
