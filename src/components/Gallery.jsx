@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { render } from 'react-dom';
+import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Gallery from 'react-photo-gallery';
 import Img from 'gatsby-image';
@@ -17,7 +17,7 @@ const GET_PICTURES = graphql`
               height
               width
             }
-            fluid {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -26,6 +26,23 @@ const GET_PICTURES = graphql`
     }
   }
 `;
+
+const galleryImgStyle = css`
+  cursor: pointer;
+  transition: ease 200ms;
+  &:hover {
+    filter: brightness(0.5);
+  }
+`;
+
+const carouselImgStyle = css`
+  height: auto;
+  max-height: 100vh;
+  max-width: 100%;
+  userselect: none;
+`;
+
+const setStyle = style => base => ({ ...base, ...style });
 
 const ImageGall = ({ folder }) => {
   const data = useStaticQuery(GET_PICTURES);
@@ -36,37 +53,47 @@ const ImageGall = ({ folder }) => {
       fluid: x.node.childImageSharp.fluid,
     }));
 
-    const [currentImage, setCurrentImage] = useState(0);
-    const [viewerIsOpen, setViewerIsOpen] = useState(false);
-    
-    const openLightbox = useCallback((event, { pictures, index }) => {
-      setCurrentImage(index);
-      setViewerIsOpen(true);
-    }, []);
-    
-    const closeLightbox = () => {
-      setCurrentImage(0);
-      setViewerIsOpen(false);
-    };
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  }, []);
+
   return (
-    <div>
-  return (
-    <Gallery
-      photos={pictures}
-      renderImage={({ key, photo, margin }) => (
-        <Img
-          key={key}
-          fluid={photo.fluid}
-          style={{
-            width: photo.width,
-            margin,
-          }}
-        />
-      )}
-    />
-      <ModalGateway>
-        {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
+    <>
+      <Gallery
+        photos={pictures}
+        onClick={openLightbox}
+        renderImage={({ key, index, photo, margin, onClick }) => (
+          <Img
+            key={key}
+            fluid={photo.fluid}
+            onClick={event => onClick(event, { index })}
+            css={galleryImgStyle}
+            style={{
+              width: photo.width,
+              margin,
+            }}
+          />
+        )}
+      />
+      <ModalGateway st>
+        {viewerIsOpen && (
+          <Modal
+            onClose={closeLightbox}
+            styles={{
+              positioner: setStyle({ zIndex: 3000 }),
+              blanket: setStyle({ zIndex: 3000 }),
+              dialog: setStyle({ flex: 1 }),
+            }}
+          >
             <Carousel
               currentIndex={currentImage}
               views={pictures.map(x => ({
@@ -74,11 +101,21 @@ const ImageGall = ({ folder }) => {
                 srcset: x.srcSet,
                 caption: x.title,
               }))}
+              components={{
+                View: ({ index, data }) => (
+                  <Img
+                    key={index}
+                    fluid={data.fluid}
+                    imgStyle={{ objectFit: 'contain' }}
+                    css={carouselImgStyle}
+                  />
+                ),
+              }}
             />
           </Modal>
-        ) : null}
+        )}
       </ModalGateway>
-    </div>
+    </>
   );
 };
 
