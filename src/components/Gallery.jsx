@@ -39,8 +39,15 @@ const ImageGall = ({ folder }) => {
   return (
     <Gallery
       photos={pictures}
-      renderImage={({ index, left, top, key, photo }) => (
-        <Img key={index} fluid={photo.fluid} />
+      renderImage={({ key, photo, margin }) => (
+        <Img
+          key={key}
+          fluid={photo.fluid}
+          style={{
+            width: photo.width,
+            margin,
+          }}
+        />
       )}
     />
   );
