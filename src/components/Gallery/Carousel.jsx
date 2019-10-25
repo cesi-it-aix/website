@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import Img from 'gatsby-image';
-import Carousel, { Modal, ModalGateway } from 'react-images';
+import ModalCarousel, { Modal, ModalGateway } from 'react-images';
 
 const carouselImgStyle = css`
   height: auto;
@@ -23,7 +23,7 @@ const Carousel = ({ pictures, index, isOpen, onClose }) => (
           dialog: setStyle({ flex: 1 }),
         }}
       >
-        <Carousel
+        <ModalCarousel
           currentIndex={index}
           views={pictures}
           components={{

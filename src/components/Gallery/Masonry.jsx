@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import Gallery from 'react-photo-gallery';
 import Img from 'gatsby-image';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import { useLoadMore } from '../../hooks';
 
 const galleryImgStyle = css`
@@ -13,24 +14,32 @@ const galleryImgStyle = css`
 `;
 
 const Masonry = ({ pictures, onClick }) => {
-  const displayedPictures = useLoadMore(pictures, 5);
-
+  const [displayedPictures, displayMorePictures] = useLoadMore(pictures, 10);
+  const hasMorePictures = displayedPictures.length < pictures.length;
+  
   return (
-    <Gallery
-      photos={displayedPictures}
-      renderImage={({ key, index, photo, margin }) => (
-        <Img
-          key={key}
-          fluid={photo.fluid}
-          onClick={event => onClick(event, { index })}
-          css={galleryImgStyle}
-          style={{
-            width: photo.width,
-            margin,
-          }}
-        />
-      )}
-    />
+    <InfiniteScroll
+      dataLength={displayedPictures.length}
+      next={displayMorePictures}
+      hasMore={hasMorePictures}
+      loader={<h4 style={{ textAlign: 'center' }}>loading...</h4>}
+    >
+      <Gallery
+        photos={displayedPictures}
+        renderImage={({ key, index, photo, margin }) => (
+          <Img
+            key={key}
+            fluid={photo.fluid}
+            onClick={event => onClick(event, { index })}
+            css={galleryImgStyle}
+            style={{
+              width: photo.width,
+              margin,
+            }}
+          />
+        )}
+      />
+    </InfiniteScroll>
   );
 };
 

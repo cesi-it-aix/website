@@ -3,7 +3,7 @@ import { usePictures } from './usePictures';
 import Carousel from './Carousel';
 import Masonry from './Masonry';
 
-const ImageGall = ({ folder }) => {
+function Gallery({ folder }) {
   const pictures = usePictures(folder);
 
   const [pictureIndex, setPictureIndex] = useState(0);
@@ -30,6 +30,6 @@ const ImageGall = ({ folder }) => {
       />
     </>
   );
-};
+}
 
-export default ImageGall;
+export default Gallery;
