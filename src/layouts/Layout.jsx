@@ -47,7 +47,7 @@ const Layout = ({ children }) => (
               flex-direction: column;
               min-height: 100vh;
               padding: 0 !important;
-              overflow: auto !important;
+              overflow: initial !important;
             }
             a {
               color: ${theme.colors.link};
