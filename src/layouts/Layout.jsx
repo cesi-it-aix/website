@@ -27,6 +27,7 @@ const Layout = ({ children }) => (
             html {
               text-rendering: optimizeLegibility;
               overflow-x: hidden;
+              overflow-y: auto;
               box-sizing: border-box;
               -ms-overflow-style: scrollbar;
               -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -45,6 +46,8 @@ const Layout = ({ children }) => (
               display: flex;
               flex-direction: column;
               min-height: 100vh;
+              padding: 0 !important;
+              overflow: initial !important;
             }
             a {
               color: ${theme.colors.link};
