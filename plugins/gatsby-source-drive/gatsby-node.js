@@ -2,9 +2,14 @@ const { google } = require('googleapis');
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
 const crypto = require('crypto');
 const path = require('path');
+const Bottleneck = require('bottleneck');
 require('dotenv').config();
 
 const FOLDER_TYPE = 'application/vnd.google-apps.folder';
+
+const limiter = new Bottleneck({
+  minTime: 200,
+});
 
 const auth = new google.auth.GoogleAuth({
   scopes: ['https://www.googleapis.com/auth/drive'],
@@ -20,16 +25,20 @@ const drive = google.drive({ version: 'v3', auth });
 exports.sourceNodes = async ({ actions, createNodeId }) => {
   const { createNode } = actions;
 
-  const imageFolders = await drive.files.list({
-    q: `'1LvAEQCl_d1yJXhjWEqPCoIzH-AB-Xwv9' in parents`,
-  });
+  const imageFolders = await limiter.schedule(() =>
+    drive.files.list({
+      q: `'1LvAEQCl_d1yJXhjWEqPCoIzH-AB-Xwv9' in parents`,
+    })
+  );
 
   await Promise.all(
     imageFolders.data.files.map(async folder => {
       if (folder.mimeType === FOLDER_TYPE) {
-        const folderContent = await drive.files.list({
-          q: `'${folder.id}' in parents`,
-        });
+        const folderContent = await limiter.schedule(() =>
+          drive.files.list({
+            q: `'${folder.id}' in parents`,
+          })
+        );
         const images =
           process.env.NODE_ENV === 'development'
             ? folderContent.data.files.slice(0, 5)
@@ -46,10 +55,12 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
                 .digest('hex');
               const {
                 data: { webContentLink, createdTime },
-              } = await drive.files.get({
-                fileId: image.id,
-                fields: 'webContentLink, createdTime',
-              });
+              } = await limiter.schedule(() =>
+                drive.files.get({
+                  fileId: image.id,
+                  fields: 'webContentLink, createdTime',
+                })
+              );
               const node = Object.assign({}, image, {
                 id: nodeId,
                 parent: `__SOURCE__`,

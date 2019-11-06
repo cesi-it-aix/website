@@ -28,6 +28,7 @@
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "babel-plugin-emotion": "^10.0.23",
+    "bottleneck": "^2.19.5",
     "emotion-theming": "^10.0.19",
     "gatsby": "^2.17.10",
     "gatsby-image": "^2.2.30",
